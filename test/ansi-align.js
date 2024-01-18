@@ -1,6 +1,6 @@
 import test from 'ava'
 import chalk from 'chalk'
-import ansiAlign from '../'
+import ansiAlign from '../index.js'
 
 test('does not blow up on undefined args', (t) => {
   t.is(ansiAlign(), undefined)

@@ -1,6 +1,8 @@
 'use strict'
 
-const stringWidth = require('string-width')
+import * as stringWidthDefault from 'string-width'
+
+const { default: stringWidth } = stringWidthDefault
 
 function ansiAlign (text, opts) {
   if (!text) return text
@@ -50,8 +52,6 @@ ansiAlign.right = function right (text) {
   return ansiAlign(text, { align: 'right' })
 }
 
-module.exports = ansiAlign
-
 function halfDiff (maxWidth, curWidth) {
   return Math.floor((maxWidth - curWidth) / 2)
 }
@@ -59,3 +59,5 @@ function halfDiff (maxWidth, curWidth) {
 function fullDiff (maxWidth, curWidth) {
   return maxWidth - curWidth
 }
+
+export default ansiAlign
